@@ -1,5 +1,7 @@
-body{
-    background-color: rgba(255, 0, 0,0.05);
+body {
+    background-color: rgba(255, 0, 0, 0.05);
+    font-family: sans-serif;
+
 }
 
 
@@ -24,15 +26,18 @@ header {
 }
 
 a {
-    background:
-        linear-gradient(black 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, .08em);
-    transition: .3s var(--t, 0s), background-position .3s calc(.3s - var(--t, 0s));
+    background-image: linear-gradient(#1095c1 0 0);
+    background-size: 100% .08em;
+    /* .08em is our fixed height; modify as needed. */
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s, background-position .3s .3s;
 }
 
 a:hover {
-    --p: 100%;
-    --t: .3s;
-    color: #fff;
+    transition: background-size .3s .3s, background-position .3s;
+    background-size: 100% 100%;
+    background-position:100% 100%;
 }
 
 .parent div {
@@ -40,7 +45,8 @@ a:hover {
     font-family: sans-serif;
     justify-content: space-between;
 }
-.div2{
+
+.div2 {
     width: 95%;
     margin: auto;
 }
@@ -52,33 +58,60 @@ a:hover {
     padding-top: 25%;
     font-weight: bolder;
 }
-.parent h1{
+
+.parent h1 {
     font-size: 120px;
     text-align: right;
     width: 500px;
     padding-top: 30px;
 }
-video{
+
+.video {
     height: 100vh;
-    width: 98%;
-    margin: auto;
-    border-radius: 10px;
+    width: 100%;
     margin-top: 20px;
 }
-.marque div img{
-width: 100px;
-height: 100px;
+video{
+    object-fit: cover;
+    border-radius: 10px;
+    margin: auto;
+width: 90%;
+
 }
-marquee{
+marquee {
     margin-top: 50px;
-    display: flex;
+    padding: 20px;
+}
 
+marquee img {
+    width: 70px;
+    height: 70px;
+    
 }
-.marque{
-    display: flex;
-}
-.marque div span{
+
+ div span {
     font-size: 100px;
-    font-weight: bolder;
-}
+    font-weight: bold;
+    padding: 20px;
 
+}
+/*a {
+    position: relative;
+    z-index: 1;
+}
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background: blue;
+    z-index: -1;
+    transition: transform 0.3s;
+}
+a:hover::after {
+    transform: scaleY(1);
+}*/
