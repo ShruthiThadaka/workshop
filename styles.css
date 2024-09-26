@@ -38,6 +38,7 @@ a:hover {
     transition: background-size .3s .3s, background-position .3s;
     background-size: 100% 100%;
     background-position:100% 100%;
+    color: white;
 }
 
 .parent div {
